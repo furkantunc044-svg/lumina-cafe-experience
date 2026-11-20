@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #0c0b0a;
+  --bg-elevated: #151311;
+  --bg-card: #1a1714;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --brand-primary: #d9a05b;
+  --brand-accent: #f3c78a;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  background-color: var(--bg-base);
+  color: #f5f2ed;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth looping motion for animated menu cards */
+@keyframes kenburns-zoom {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.1) translate3d(0, -2%, 0);
+  }
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes kenburns-pan {
+  0% {
+    transform: scale(1.08) translate3d(-2%, 0, 0);
+  }
+  50% {
+    transform: scale(1.12) translate3d(2%, -1%, 0);
+  }
+  100% {
+    transform: scale(1.08) translate3d(-2%, 0, 0);
+  }
+}
+
+@keyframes gentle-float {
+  0% {
+    transform: scale(1.04) translate3d(0, 1.5%, 0);
+  }
+  50% {
+    transform: scale(1.09) translate3d(0, -1.5%, 0);
+  }
+  100% {
+    transform: scale(1.04) translate3d(0, 1.5%, 0);
+  }
+}
+
+.animate-motion-zoom {
+  animation: kenburns-zoom 9s ease-in-out infinite;
+}
+
+.animate-motion-pan {
+  animation: kenburns-pan 11s ease-in-out infinite;
+}
+
+.animate-motion-float {
+  animation: gentle-float 8s ease-in-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
